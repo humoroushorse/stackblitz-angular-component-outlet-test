@@ -1,0 +1,55 @@
+<mat-card>
+
+  <mat-card-content>
+    <mat-chip-set aria-label="Dog selection">
+      <mat-chip>
+        <img
+          matChipAvatar
+          src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+          alt="Photo of a Shiba Inu"
+        />
+        Dog one
+      </mat-chip>
+      <mat-chip>
+        <img
+          matChipAvatar
+          src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+          alt="Photo of a Shiba Inu"
+        />
+        Dog two
+      </mat-chip>
+      <mat-chip>
+        <img
+          matChipAvatar
+          src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+          alt="Photo of a Shiba Inu"
+        />
+        Dog three
+      </mat-chip>
+    </mat-chip-set>
+
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-button aria-label="info foobar" type="button" (click)="onClick()">
+      click
+    </button>
+
+    <button mat-button aria-label="foobar" type="dialog button" (click)="openDialog()">
+      dialog
+    </button>
+
+    <button mat-button aria-label="foobar" type="tooltip button" (click)="onClick()" matTooltip="foobar tooltip">
+      tooltip <mat-icon>info</mat-icon>
+    </button>
+
+    @if (data) {
+      <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+      </mat-menu>
+    }
+  </mat-card-actions>
+
+</mat-card>
