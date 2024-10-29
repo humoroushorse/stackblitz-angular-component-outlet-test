@@ -1,4 +1,4 @@
-import { Component, InjectionToken, Injector } from '@angular/core';
+import { ChangeDetectionStrategy, Component, InjectionToken, Injector } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FoobarComponent } from './foobar/foobar.component';
 import { CommonModule } from '@angular/common';
@@ -22,7 +22,8 @@ export const DATA_TOKEN = new InjectionToken<SomeData>('');
     MatButtonModule,
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   title = 'stackblitz-angular-component-outlet-test';
