@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { DATA_TOKEN, SomeData } from '../app.component';
 import { CommonModule } from '@angular/common';
 import { MyDialogComponent } from '../my-dialog/my-dialog.component';
@@ -23,12 +23,17 @@ import { MatCardModule } from '@angular/material/card';
     MatCardModule,
   ],
   templateUrl: './foobar.component.html',
-  styleUrl: './foobar.component.scss'
+  styleUrl: './foobar.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FoobarComponent {
   readonly data: SomeData = inject(DATA_TOKEN);
 
   readonly dialog = inject(MatDialog);
+
+  constructor() {
+    console.log('Created Foobar Component -> ', this.data.name)
+  }
 
   onClick() { console.log('boop', this.data) }
 
